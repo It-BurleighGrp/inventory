@@ -4,11 +4,12 @@ import { Button } from 'native-base'
 
 interface ButtonProps extends ITextProps {
     children: ReactNode
+    onPress: any
 }
-export function Botao({ children, ...rest }: ButtonProps){
+export function Botao({ children, onPress, ...rest}: ButtonProps){
     return (
         <Button   
-        // onPress={()=> {push('./Menu')}}         
+        onPress={onPress}         
         w="100%"
         bg='blue.800'
         marginTop={5}

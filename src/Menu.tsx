@@ -1,6 +1,6 @@
 import { VStack, Image, Text, Box, FormControl, Input, Button, Link, ScrollView} from 'native-base';
 import Logo from '../src/assets/Flockdlogo.png';
-import { TouchableOpacity, StyleSheet  } from 'react-native';
+import { TouchableOpacity, StyleSheet, View  } from 'react-native';
 import { useState } from 'react';
 import {styles} from './style';
 //import {useRouter, useNavigation} from 'expo-router'
@@ -43,7 +43,14 @@ export default function Menu() {
 
           </Box>
           {numSecao > 0 && <Botao onPress={() => voltarSecao()} bgColor="gray.400">Voltar</Botao>}
-          <Botao onPress={() => avancarSecao()} mt={4} mb={20}>Avançar</Botao>
+          <Botao onPress={avancarSecao} mt={4} mb={20}>Avançar</Botao>
+
+      
+           {/*  <Text>Teste aqui {numSecao}</Text>
+            <Button
+            onPress={()=> teste()}
+            >Click me!!!</Button> */}
+          
 
   </ScrollView>
   );
