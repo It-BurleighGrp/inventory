@@ -1,6 +1,6 @@
 import { VStack, Image, Text, Box, FormControl, Input, Button, Link} from 'native-base'
-import Logo from '../../assets/Flockdlogo.png'
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import Logo from '../src/assets/Flockdlogo.png'
+import { TouchableOpacity, StyleSheet} from 'react-native';
 import {styles} from './style'
 
 
