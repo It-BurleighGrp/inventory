@@ -10,15 +10,14 @@ import { Titulo } from './Components/Titulo';
 import { CaixaTexto } from './Components/CaixaTexto';
 import { Botao } from './Components/Button';
 import { Url } from './Components/Link';
-import { secoes } from '../src/utils/CadastroEntradaTexto';
-import { useNavigation } from '@react-navigation/native'
+import { inventory } from './utils/FormularioInventory';
 
 // const Stack = createNativeStackNavigator();
-export default function Menu({navigation}) {
+export default function InventoryForm() {
   const [numSecao, setNumSecao] = useState(0);
 
    function avancarSecao(){
-    if(numSecao < secoes.length - 1){
+    if(numSecao < inventory.length - 1){
       setNumSecao(numSecao+1)
     }
   }
@@ -33,29 +32,19 @@ export default function Menu({navigation}) {
     <ScrollView flex={1} p={5}>
       <Image source={Logo} alt="Logo Flockd"/>
         <Titulo >
-          {secoes[numSecao].titulo}
+          {inventory[numSecao].titulo}
         </Titulo>
         <Box>
           {
-            secoes[numSecao]?.entradaTexto?.map(entrada => {
-              return <CaixaTexto label={entrada.label} placeholder={entrada.placeholder} key={entrada.id} type={entrada.type?entrada.type:'text'}/>
+            inventory[numSecao]?.entradaTexto?.map(entrada => {
+              return <CaixaTexto label={entrada.label} placeholder={entrada.placeholder} key={entrada.id}/>
             })
           }
 
           </Box>
-          <Box>
-          {
-            secoes[numSecao]?.checkbox?.map(checkbox => {
-              return <Checkbox key={checkbox.id} value={checkbox.value}>
-                {checkbox.value}
-              </Checkbox>
-            })
-          }
 
-          </Box>
           {numSecao > 0 && <Botao onPress={() => voltarSecao()} bgColor="gray.400">Voltar</Botao>}
-          {numSecao !== 2 && <Botao onPress={() => avancarSecao()} mt={4} mb={20}>Avançar</Botao>}
-          {numSecao === secoes.length -1 && <Botao onPress={() => navigation.navigate('InventoryForm')} bgColor="gray.400">Go to Inventory</Botao>}
+          <Botao onPress={() => avancarSecao()} mt={4} mb={20}>Avançar</Botao>
 
   </ScrollView>
   );

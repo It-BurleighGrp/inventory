@@ -2,9 +2,11 @@ import { VStack, Image, Text, Box, FormControl, Input, Button, Link} from 'nativ
 import Logo from '../src/assets/Flockdlogo.png'
 import { TouchableOpacity, StyleSheet} from 'react-native';
 import {styles} from './style'
+import { useNavigation } from '@react-navigation/native'
 
 
-export default function Login() {
+export default function Login({navigation}) {
+  // const navigation = useNavigation()
   return (
     <VStack flex={1} alignItems="center" justifyContent="center" p={5}>
       <Image source={Logo} alt="Logo Flockd" />
@@ -56,7 +58,7 @@ export default function Login() {
 
           <Box style={styles.box}>
             <Text>Still don't have account?</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
               <Text
               color="blue.500"
               fontWeight="bold"

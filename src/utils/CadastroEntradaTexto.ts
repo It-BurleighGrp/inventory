@@ -5,24 +5,26 @@ const secoes = [
       entradaTexto: [
         {
           id: 1,
-          label: 'Nome',
-          placeholder: 'Digite seu nome completo'
+          label: 'Name',
+          placeholder: 'Write your complete name'
         },
         {
           id: 2,
           label: 'Email',
-          placeholder: 'Digite seu email'
+          placeholder: 'Write a valid email'
         },
         {
           id: 3,
-          label: 'Crie uma senha',
-          placeholder: 'Insira sua senha',
+          type: 'password',
+          label: 'Insert your password',
+          placeholder: 'Insert your password',
           secureTextEntry: true,
         },
         {
           id: 4,
-          label: 'Confirme sua senha',
-          placeholder: 'Insira sua senha',
+          type: 'password',
+          label: 'Confirm your password',
+          placeholder: 'Write your password',
           secureTextEntry: true,
         }
       ],
@@ -55,7 +57,7 @@ const secoes = [
         {
           id: 5,
           label: 'Telefone',
-          placeholder: '(00) 00000-0000'
+          placeholder: '(00) 00000-0000'          
         },
       ],
       checkbox: []
@@ -63,7 +65,7 @@ const secoes = [
     {
       id: 3,
       titulo: 'Para finalizar, quais são os seus planos?',
-      entradaTexto: [],
+      entradaTexto: [],      
       checkbox: [
         {
           id: 1,
