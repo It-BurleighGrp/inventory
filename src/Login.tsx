@@ -44,11 +44,12 @@ export default function Login({navigation}) {
             />
           </FormControl>
           </Box>
-          <Button
+          <Button 
           w="100%"
           bg='blue.800'
           marginTop={5}
           borderRadius="lg"
+          onPress={() => navigation.navigate('Tabs')}
           >
             log in
           </Button>

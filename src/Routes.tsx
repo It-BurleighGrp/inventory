@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Login from "./Login";
 import Menu from "./Menu";
 import InventoryForm from "./FormsInventory";
+import Tabs from "./Tabs";
 
 const Tab = createNativeStackNavigator();
 
@@ -20,6 +21,9 @@ export default function Rotas (){
                 />
                 <Tab.Screen 
                 name="InventoryForm" component={InventoryForm} options={{headerShown: false}}
+                />
+                <Tab.Screen 
+                name="Tabs" component={Tabs} options={{headerShown: false}}
                 />
             </Tab.Navigator>
 
