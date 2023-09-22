@@ -45,7 +45,7 @@ export default function Tabs (){
                 options={{
                     headerShown: false,
                     tabBarIcon: ({color, size}) => (
-                        <Ionicons name="code" color={color} size= {size} />
+                        <Ionicons name="qr-code-outline" color={color} size= {size} />
                     )
                 }}
             />
