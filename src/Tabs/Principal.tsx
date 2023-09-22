@@ -17,10 +17,7 @@ export default function Principal({navigation}) {
             onPress={() => navigation.navigate('Tabs')}
             >
               log in
-            </Button>
-            
-  
-            
+            </Button>           
       </VStack>
     );
   }

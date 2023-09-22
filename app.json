@@ -7,9 +7,9 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/LottieFiles/imaggif.gif",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./src/assets/Flockdlogo.png",
+      "resizeMode": "center",
+      "backgroundColor": "#FFF"
     },
     "assetBundlePatterns": [
       "**/*"

@@ -11,9 +11,12 @@ import { CaixaTexto } from './Components/CaixaTexto';
 import { Botao } from './Components/Button';
 import { Url } from './Components/Link';
 import { inventory } from './utils/FormularioInventory';
+import { secoes } from '../src/utils/CadastroEntradaTexto';
+import { useNavigation } from '@react-navigation/native';
+import Tabs from "./Tabs";
 
 // const Stack = createNativeStackNavigator();
-export default function InventoryForm() {
+export default function InventoryForm({navigation}) {
   const [numSecao, setNumSecao] = useState(0);
 
    function avancarSecao(){
@@ -44,7 +47,8 @@ export default function InventoryForm() {
           </Box>
 
           {numSecao > 0 && <Botao onPress={() => voltarSecao()} bgColor="gray.400">Voltar</Botao>}
-          <Botao onPress={() => avancarSecao()} mt={4} mb={20}>Avançar</Botao>
+          {numSecao !== 2 &&<Botao onPress={() => avancarSecao()} mt={4} mb={20}>Avançar</Botao>}
+          {numSecao === secoes.length -1 && <Botao onPress={() => navigation.navigate('Tabs')} bgColor="gray.400">Finish</Botao>}
 
   </ScrollView>
   );

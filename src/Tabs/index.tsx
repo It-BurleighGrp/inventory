@@ -30,7 +30,7 @@ export default function Tabs (){
                 }}
             />
             <Tab.Screen
-                name ="Add a new object"
+                name ="Add New"
                 component={InventoryForm} 
                 options={{
                     headerShown: false,
