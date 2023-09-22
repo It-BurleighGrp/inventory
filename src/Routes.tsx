@@ -6,6 +6,7 @@ import Login from "./Login";
 import Menu from "./Menu";
 import InventoryForm from "./FormsInventory";
 import Tabs from "./Tabs";
+import Principal from "./Tabs/Principal";
 
 const Tab = createNativeStackNavigator();
 
@@ -24,6 +25,9 @@ export default function Rotas (){
                 />
                 <Tab.Screen 
                 name="Tabs" component={Tabs} options={{headerShown: false}}
+                />
+                <Tab.Screen 
+                name="Principal" component={Principal} options={{headerShown: false}}
                 />
             </Tab.Navigator>
 

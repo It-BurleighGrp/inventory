@@ -3,6 +3,8 @@ import Principal from "./Principal";
 import Profile from "./Profile";
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import {styles} from '../style'
+import InventoryForm from "../FormsInventory"
+import Qrcode from './Qrcode';
 
 const Tab = createBottomTabNavigator()
 
@@ -13,17 +15,37 @@ export default function Tabs (){
                 tabBarStyle: {
                     backgroundColor: '#f58b6b'
                 },
-                tabBarActiveTintColor: '#fff',
+                tabBarActiveTintColor: '#FFF',
                 tabBarInactiveTintColor: '#eccec0'
             }}
         >
             <Tab.Screen
-                name ="Principal"
+                name ="List"
                 component={Principal} 
                 options={{
                     headerShown: false, 
                     tabBarIcon: ({color, size}) => (
-                        <Ionicons name="home" color='{color}' size= {size}/>
+                        <Ionicons name="list" color={color} size= {size}/>
+                    )
+                }}
+            />
+            <Tab.Screen
+                name ="Add a new object"
+                component={InventoryForm} 
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({color, size}) => (
+                        <Ionicons name="add-outline" color={color} size= {size} />
+                    )
+                }}
+            />
+            <Tab.Screen
+                name ="QR Code"
+                component={Qrcode} 
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({color, size}) => (
+                        <Ionicons name="code" color={color} size= {size} />
                     )
                 }}
             />
@@ -32,11 +54,12 @@ export default function Tabs (){
                 component={Profile} 
                 options={{
                     headerShown: false,
-                    tabBarIcon: () => (
-                        <Ionicons name="person" color='#fff' size= {20} />
+                    tabBarIcon: ({color, size}) => (
+                        <Ionicons name="person" color={color} size= {size} />
                     )
                 }}
             />
+
         </Tab.Navigator>
     )
 }
