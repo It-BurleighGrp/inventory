@@ -7,6 +7,7 @@ import Menu from "./Menu";
 import InventoryForm from "./FormsInventory";
 import Tabs from "./Tabs";
 import Principal from "./Tabs/Principal";
+import Modalpage from "./Modal/ItensProperty";
 
 const Tab = createNativeStackNavigator();
 
@@ -29,6 +30,10 @@ export default function Rotas (){
                 <Tab.Screen 
                 name="Principal" component={Principal} options={{headerShown: false}}
                 />
+                <Tab.Screen 
+                name="Modalpage" component={Modalpage} options={{headerShown: false}}
+                />
+                
             </Tab.Navigator>
 
         </NavigationContainer>
