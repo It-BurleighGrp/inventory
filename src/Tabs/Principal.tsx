@@ -26,7 +26,7 @@ export default function Principal({navigation}) {
     },[])
     console.warn(inventory)
     return (
-      <ScrollView flex={1} p={5} >
+      <ScrollView flex={1} p={5} marginBottom='5' >
             <Image source={Logo} alt="Logo Flockd" />
             { !isModalVisible ?(
             <>
@@ -46,7 +46,7 @@ export default function Principal({navigation}) {
                         fontWeight="bold"
                         color="gray.600"
                         fontSize='16'
-                        margin='2'
+                        margin='5'
                         onPress={() => {setItemSelect(item), setIsModalVisible(true)}}
                         // onPress={() => console.log(item)} 
                         key={item.id}>
@@ -62,11 +62,20 @@ export default function Principal({navigation}) {
                 >
                   <View style={stylesModal.centeredView}>
                     <View style={stylesModal.modalView}>
-                      <Text style={stylesModal.modalText}>{itemSelect.model}</Text>
+                      <Text style={stylesModal.modalText}>Model: {itemSelect.model} {"\n"}
+                      Name: {itemSelect.name}{"\n"}
+                      Localization: {itemSelect.localization}{"\n"}
+                      Other information: {itemSelect.others}{"\n"}
+                      Price: {itemSelect.price}{"\n"}
+                      Responsible: {itemSelect.responsible}{"\n"}
+                      Serial: {itemSelect.serial}{"\n"}
+                      Status: {itemSelect.status}{"\n"}
+                      Type: {itemSelect.type}{"\n"}
+                      </Text>
                       <Pressable
                         style={[stylesModal.button, stylesModal.buttonClose]}
                         onPress={() => setIsModalVisible(!isModalVisible)}>
-                        <Text style={stylesModal.textStyle}>Hide Modal</Text>
+                        <Text style={stylesModal.textStyle}>back</Text>
                       </Pressable>
                     </View>
                   </View>
@@ -82,33 +91,36 @@ export default function Principal({navigation}) {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: 22,
+    //   height: 50,
+    //   backgroundColor: 'teal',
+    //   marginTop: 22,
     },
     modalView: {
-      margin: 20,
+    //   margin: 20,
+      width: '90%',
+      height: '70%',
       backgroundColor: 'white',
       borderRadius: 20,
-      padding: 35,
+      padding: 30,
       alignItems: 'center',
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2,
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 4,
-      elevation: 5,
-    },
-    button: {
-      borderRadius: 20,
-      padding: 10,
+    //   shadowColor: '#000',
+    //   shadowOffset: {
+    //     width: 0,
+    //     height: 2,
+    //   },
+    //   shadowOpacity: 0.25,
+      shadowRadius: 2,
       elevation: 2,
     },
-    buttonOpen: {
-      backgroundColor: '#F194FF',
+    button: {
+      borderRadius: 10,
+      marginTop: 200,
+      padding: 10,
+      width: '90%',
+      elevation: 2,
     },
     buttonClose: {
-      backgroundColor: '#2196F3',
+      backgroundColor: '#f58b6b',
     },
     textStyle: {
       color: 'white',
