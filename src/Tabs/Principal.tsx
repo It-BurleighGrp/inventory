@@ -8,15 +8,21 @@ export default function Principal({navigation}) {
     // const navigation = useNavigation()
     const [inventory, setInventory] = useState([])
     useEffect(() => {
-        const teste = fetch('localhost:3334/items')
-        .then((response) => {response.json()})
+        // const teste = fetch('https://reactnative.dev/movies.json')
+        const teste = fetch('https://d6b8-163-47-49-182.ngrok-free.app/items')
+        .then((response) => response.json()) 
+        .then ((data) => setInventory(data))
         .catch((error) => {console.warn('TESTANDO....', error)})
         console.warn(teste)
     },[])
+    console.warn(inventory)
     return (
       <ScrollView flex={1} p={5} >
             <Image source={Logo} alt="Logo Flockd" />
-            <Text>LIST A SER INCLUIDA</Text>          
+            <Text>LIST A SER INCLUIDA</Text>    
+            {inventory && inventory.map((item) => {
+                return(<Text key={item.id}>{item.name}</Text>)                
+            })}      
       </ScrollView>
     );
   }
