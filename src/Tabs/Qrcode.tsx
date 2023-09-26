@@ -1,15 +1,9 @@
-import { Text, VStack } from "native-base";
-import { useState } from 'react';
-import {styles} from '../style';
-import { TouchableOpacity, StyleSheet  } from 'react-native';
+import { Text, VStack } from 'native-base'
 
-
-export default function Qrcode (){
-    return(
-        <VStack>
-            <Text>
-             QRCODE
-            </Text>
-        </VStack>
-    )
+export default function Qrcode() {
+  return (
+    <VStack>
+      <Text>QRCODE</Text>
+    </VStack>
+  )
 }

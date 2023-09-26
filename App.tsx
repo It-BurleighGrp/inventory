@@ -1,7 +1,7 @@
-import { NativeBaseProvider, StatusBar} from 'native-base'
+import { NativeBaseProvider, StatusBar } from 'native-base'
 
-import { TEMAS } from './src/estilos/temas'; 
-import Rotas from './src/Routes';
+import { TEMAS } from './src/estilos/temas'
+import Rotas from './src/Routes'
 
 export default function App() {
   return (
@@ -12,7 +12,5 @@ export default function App() {
       {/* <InventoryForm /> */}
       {/* <Login /> */}
     </NativeBaseProvider>
-  );
+  )
 }
-
-

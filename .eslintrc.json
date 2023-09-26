@@ -1,0 +1,89 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest": true
+    },
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "airbnb",
+      "prettier",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+    "rules": {
+      "prettier/prettier": "error",
+      "no-tabs": "off",
+      "semi": "off",
+      "jsx-a11y/label-has-associated-control": "off",
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "components": ["Link"],
+          "specialLink": ["hrefLeft", "hrefRight"],
+          "aspects": ["invalidHref", "preferButton"]
+        }
+      ],
+      "no-shadow": "off",
+      "operator-linebreak": "off",
+      "object-curly-newline": "off",
+      "implicit-arrow-linebreak": "off",
+      "react/jsx-indent": "off",
+      "react/jsx-no-bind":"off",
+      "react/jsx-props-no-spreading": [1],
+      "react/jsx-indent-props": "off",
+      "react/react-in-jsx-scope": "off",
+      "space-before-function-paren": "off",
+      "import/no-extraneous-dependencies": "off",
+      "react/prop-types": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [".tsx", ".ts", ".jsx", ".js"]
+        }
+      ],
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-use-before-define": ["off"],
+      "import/prefer-default-export": "off",
+      "import/no-unresolved": "off",
+      "import/no-self-import": "off",
+      "import/named": "off",
+      "import/no-named-as-default": "off",
+      "import/no-named-as-default-member": "off",
+      "import/no-useless-path-segments": "off",
+      "import/order": "off",
+      "import/no-cycle": "off",
+      "import/no-relative-packages": "off",
+      "import/no-duplicates": "off",
+      "arrow-body-style": ["off"],
+      "no-confusing-arrow": "off",
+      "no-unused-vars": "off",
+      "import/export": "off",
+      "import/extensions": [
+        "off",
+        {
+          "ts": "never",
+          "tsx": "never"
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    }
+  }
