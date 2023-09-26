@@ -48,7 +48,7 @@ export default function InventoryForm({navigation}) {
 
           {numSecao > 0 && <Botao onPress={() => voltarSecao()} bgColor="gray.400">Voltar</Botao>}
           {numSecao !== 2 &&<Botao onPress={() => avancarSecao()} mt={4} mb={20}>Avançar</Botao>}
-          {numSecao === secoes.length -1 && <Botao onPress={() => navigation.navigate('Tabs')} bgColor="gray.400">Finish</Botao>}
+          {numSecao === secoes.length -1 && <Botao onPress={() => {setNumSecao(0),navigation.navigate('List')}} bgColor="gray.400">Finish</Botao>}
 
   </ScrollView>
   );

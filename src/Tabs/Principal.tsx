@@ -1,4 +1,4 @@
-import { Text, VStack, ITextProps, Button, Image, FormControl, Box, Input, Link, Center, ScrollView } from "native-base";
+import { Text, VStack, ITextProps, Button, Image, FormControl, Box, Input, Link, Center, ScrollView , Divider} from "native-base";
 import { useState, ReactNode, useEffect } from 'react';
 import {styles} from '../style';
 import { TouchableOpacity, StyleSheet, Modal, Alert, Pressable, View } from 'react-native';
@@ -22,9 +22,9 @@ export default function Principal({navigation}) {
         .then((response) => response.json()) 
         .then ((data) => setInventory(data))
         .catch((error) => {console.warn('TESTANDO....', error)})
-        console.warn(teste)
+        // console.warn(teste)
     },[])
-    console.warn(inventory)
+    // console.warn(inventory)
     return (
       <ScrollView flex={1} p={5} marginBottom='5' >
             <Image source={Logo} alt="Logo Flockd" />
@@ -50,8 +50,9 @@ export default function Principal({navigation}) {
                         onPress={() => {setItemSelect(item), setIsModalVisible(true)}}
                         // onPress={() => console.log(item)} 
                         key={item.id}>
-                            {item.name} - {item.model}
-                        </Text>)                
+                            {item.name} - {item.model}                            
+                        </Text>
+                        )                                       
                 })}
             </>) : (
             <View style={stylesModal.centeredView}>
@@ -85,6 +86,10 @@ export default function Principal({navigation}) {
       </ScrollView>
     );
   }
+
+    // <Tab.Navigator tabs={props => <Tabs {...props} />}>
+    //     {...}
+    // </Tab.Navigator>
   
   const stylesModal = StyleSheet.create({
     centeredView: {
