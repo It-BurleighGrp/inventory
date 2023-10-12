@@ -3,12 +3,9 @@
 import { ITextProps } from 'native-base'
 import { ReactNode } from 'react'
 import { Button } from 'native-base'
+import { TButton } from '@/types'
 
-interface ButtonProps extends ITextProps {
-  children: ReactNode
-  onPress: any
-}
-export function Botao({ children, onPress, ...rest }: ButtonProps) {
+export function ButtonGeneral({ children, onPress, ...rest }: TButton) {
   return (
     <Button
       // onPress={()=> {push('./Menu')}}

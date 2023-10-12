@@ -1,23 +1,8 @@
 /* eslint-disable react/require-default-props */
-import { ITextProps } from 'native-base'
 import { FormControl, Input } from 'native-base'
+import { IInput } from '@/types'
 
-interface CaixaTextoProps extends ITextProps {
-  label: string
-  placeholder: string
-  type?: type
-}
-// parte que mudamos
-enum type {
-  text = 'text',
-  password = 'password',
-}
-export function CaixaTexto({
-  label,
-  placeholder,
-  type,
-  ...rest
-}: CaixaTextoProps) {
+export function InputGeneral({ label, placeholder, type, ...rest }: IInput) {
   return (
     <FormControl mt={3}>
       <FormControl.Label>{label}</FormControl.Label>

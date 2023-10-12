@@ -1,4 +1,21 @@
 {
-  "compilerOptions": {},
-  "extends": "expo/tsconfig.base"
+  "compilerOptions": {
+    "target": "es6",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "incremental": true
+  },
+  "jsx": "react-jsx",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "img.d.ts"
+  ],
+  "extends": "expo/tsconfig.base",
+  "modeResolution": "node"
 }

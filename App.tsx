@@ -1,16 +1,13 @@
-import { NativeBaseProvider, StatusBar } from 'native-base'
-
+import React from 'react'
+import { NativeBaseProvider } from 'native-base'
 import { TEMAS } from './src/estilos/temas'
-import Rotas from './src/Routes'
+
+import Routes from './src/ROUTES'
 
 export default function App() {
   return (
     <NativeBaseProvider theme={TEMAS}>
-      <StatusBar backgroundColor={TEMAS.colors.blue[800]} />
-      <Rotas />
-      {/* <Menu /> */}
-      {/* <InventoryForm /> */}
-      {/* <Login /> */}
+      <Routes />
     </NativeBaseProvider>
   )
 }

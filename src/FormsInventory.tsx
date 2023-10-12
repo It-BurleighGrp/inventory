@@ -1,21 +1,10 @@
 import { Image, Box, ScrollView } from 'native-base'
-import Logo from '../src/assets/Flockdlogo.png'
-// import { TouchableOpacity, StyleSheet } from 'react-native'
+import Logo from './assets/Flockdlogo.png'
 import { useState } from 'react'
-// import { styles } from './style'
-// import {useRouter, useNavigation} from 'expo-router'
-// import { NavigationContainer } from '@react-navigation/native'
-// import {createNativeStackNavigator} from '@react-navigation/native-stack'
-import { Titulo } from './Components/Titulo'
-import { CaixaTexto } from './Components/CaixaTexto'
-import { Botao } from './Components/Button'
-// import { Url } from './Components/Link'
+import { ButtonGeneral, InputGeneral, Title } from '@/Components'
 import { inventory } from './utils/FormularioInventory'
 import { secoes } from '../src/utils/CadastroEntradaTexto'
-// import { useNavigation } from '@react-navigation/native'
-// import Tabs from './Tabs'
 
-// const Stack = createNativeStackNavigator();
 export default function InventoryForm({ navigation }) {
   const [numSecao, setNumSecao] = useState(0)
 
@@ -34,11 +23,11 @@ export default function InventoryForm({ navigation }) {
   return (
     <ScrollView flex={1} p={5}>
       <Image source={Logo} alt="Logo Flockd" />
-      <Titulo>{inventory[numSecao].titulo}</Titulo>
+      <Title>{inventory[numSecao].titulo}</Title>
       <Box>
         {inventory[numSecao]?.entradaTexto?.map((entrada) => {
           return (
-            <CaixaTexto
+            <InputGeneral
               label={entrada.label}
               placeholder={entrada.placeholder}
               key={entrada.id}
@@ -48,25 +37,25 @@ export default function InventoryForm({ navigation }) {
       </Box>
 
       {numSecao > 0 && (
-        <Botao onPress={() => voltarSecao()} bgColor="gray.400">
+        <ButtonGeneral onPress={() => voltarSecao()} bgColor="gray.400">
           Voltar
-        </Botao>
+        </ButtonGeneral>
       )}
       {numSecao !== 2 && (
-        <Botao onPress={() => avancarSecao()} mt={4} mb={20}>
+        <ButtonGeneral onPress={() => avancarSecao()} mt={4} mb={20}>
           Avançar
-        </Botao>
+        </ButtonGeneral>
       )}
       {numSecao === secoes.length - 1 && (
-        <Botao
+        <ButtonGeneral
           onPress={() => {
             setNumSecao(0)
-            navigation.navigate('List')
+            navigation.navigate('modules', { screen: 'Principal' })
           }}
           bgColor="gray.400"
         >
           Finish
-        </Botao>
+        </ButtonGeneral>
       )}
     </ScrollView>
   )

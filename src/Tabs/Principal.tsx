@@ -1,12 +1,13 @@
-import { Text, Image, ScrollView } from 'native-base'
+import { Text, Image, ScrollView, Button } from 'native-base'
 import { useState, useEffect } from 'react'
 import { StyleSheet, Modal, Pressable, View } from 'react-native'
 import Logo from '../assets/Flockdlogo.png'
 import { TList } from '../types'
+
 // import { useFonts } from 'expo-font'
 // import Modalpage from '../Modal/ItensProperty'
 
-export default function Principal() {
+export default function Principal({ navigation }) {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [itemSelect, setItemSelect] = useState({} as TList)
 
@@ -27,6 +28,15 @@ export default function Principal() {
   return (
     <ScrollView flex={1} p={5} marginBottom="5">
       <Image source={Logo} alt="Logo Flockd" />
+      <Button
+        w="100%"
+        bg="blue.800"
+        marginTop={5}
+        borderRadius="lg"
+        onPress={() => navigation.navigate('Login')}
+      >
+        voltar
+      </Button>
       {!isModalVisible ? (
         <>
           <Text
