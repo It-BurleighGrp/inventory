@@ -11,15 +11,6 @@ export default function Login({ navigation }) {
   return (
     <VStack flex={1} alignItems="center" justifyContent="center" p={5}>
       <Image source={Logo} alt="Logo Flockd" />
-      {/* <Text
-        fontSize="lg"
-        fontWeight="bold"
-        color="gray.500"
-        textAlign="center"
-        marginTop={5}
-      >
-        Login:
-      </Text> */}
       <LoginForm />
       <Link href="https://gmail.com" marginTop={2}>
         Forgot your Password?

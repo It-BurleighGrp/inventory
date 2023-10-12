@@ -1,14 +1,12 @@
 import React from 'react'
-// import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Menu from '@/Menu'
 import InventoryForm from '@/FormsInventory'
-// import Tabs from './Tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Principal from '@/Tabs/Principal'
-import Modalpage from '@/Modal/ItensProperty'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Qrcode from '@/Tabs/Qrcode'
-import Profile from '@/Tabs/Profile'
+// import Profile from '@/Tabs/Profile'
+import Scan from '@/Tabs/Scan'
+// import FakeList from '@/Tabs/FakeList'
 
 const Tab = createBottomTabNavigator()
 
@@ -57,8 +55,8 @@ export default function TabRoutes() {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="Scan"
+        component={Scan}
         options={{
           headerShown: false,
           // eslint-disable-next-line react/no-unstable-nested-components

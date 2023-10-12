@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react'
 import { StyleSheet, Modal, Pressable, View } from 'react-native'
 import Logo from '../assets/Flockdlogo.png'
 import { TList } from '../types'
+import { useNavigation } from '@react-navigation/native'
 
 // import { useFonts } from 'expo-font'
 // import Modalpage from '../Modal/ItensProperty'
 
-export default function Principal({ navigation }) {
+export default function Principal() {
+  const navigation = useNavigation()
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [itemSelect, setItemSelect] = useState({} as TList)
 
@@ -15,16 +17,17 @@ export default function Principal({ navigation }) {
   //   Nunito: require('../assets/Fonts/Nunito-VariableFont_wght.ttf'),
   // })
   const [inventory, setInventory] = useState<TList[]>([])
+
   useEffect(() => {
-    fetch('https://d6b8-163-47-49-182.ngrok-free.app/items')
+    // fetch('https://d6b8-163-47-49-182.ngrok-free.app/items')
+    fetch('http://localhost:3334/items')
       .then((response) => response.json())
       .then((data) => setInventory(data))
       .catch((error) => {
         console.warn('TESTANDO....', error)
       })
-    // console.warn(teste)
   }, [])
-  // console.warn(inventory)
+
   return (
     <ScrollView flex={1} p={5} marginBottom="5">
       <Image source={Logo} alt="Logo Flockd" />
@@ -33,7 +36,8 @@ export default function Principal({ navigation }) {
         bg="blue.800"
         marginTop={5}
         borderRadius="lg"
-        onPress={() => navigation.navigate('Login')}
+        // @ts-ignore
+        onPress={() => navigation.navigate('Routes')}
       >
         voltar
       </Button>
@@ -62,7 +66,6 @@ export default function Principal({ navigation }) {
                     setItemSelect(item)
                     setIsModalVisible(true)
                   }}
-                  // onPress={() => console.log(item)}
                   key={item.id}
                 >
                   {item.name} - {item.model}

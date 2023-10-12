@@ -56,7 +56,9 @@ export default function Menu({ navigation }) {
       )}
       {numSecao === secoes.length - 1 && (
         <ButtonGeneral
-          onPress={() => navigation.navigate('InventoryForm')}
+          onPress={() =>
+            navigation.navigate('modules', { screen: 'Principal' })
+          }
           bgColor="gray.400"
         >
           Go to Inventory
