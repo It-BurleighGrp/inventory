@@ -1,4 +1,5 @@
 import { Image, Box, ScrollView } from 'native-base'
+import React from 'react'
 import Logo from './assets/Flockdlogo.png'
 import { useState } from 'react'
 import { ButtonGeneral, InputGeneral, Title } from '@/Components'
@@ -37,14 +38,11 @@ export default function InventoryForm({ navigation }) {
       </Box>
 
       {numSecao > 0 && (
-        <ButtonGeneral onPress={() => voltarSecao()} bgColor="gray.400">
-          Voltar
-        </ButtonGeneral>
+        <ButtonGeneral onPress={() => voltarSecao()} title='Voltar' />
+
       )}
       {numSecao !== 2 && (
-        <ButtonGeneral onPress={() => avancarSecao()} mt={4} mb={20}>
-          Avançar
-        </ButtonGeneral>
+        <ButtonGeneral onPress={() => avancarSecao()} title='Avançar' />
       )}
       {numSecao === secoes.length - 1 && (
         <ButtonGeneral
@@ -52,10 +50,8 @@ export default function InventoryForm({ navigation }) {
             setNumSecao(0)
             navigation.navigate('modules', { screen: 'Principal' })
           }}
-          bgColor="gray.400"
-        >
-          Finish
-        </ButtonGeneral>
+          title='Finish'
+       />
       )}
     </ScrollView>
   )

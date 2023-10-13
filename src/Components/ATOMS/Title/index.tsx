@@ -1,5 +1,6 @@
 import { Text } from 'native-base'
 import { ITitle } from '@/types'
+import React from 'react'
 
 export function Title({ children, ...rest }: ITitle) {
   return (

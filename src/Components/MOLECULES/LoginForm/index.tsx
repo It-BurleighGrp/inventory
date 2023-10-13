@@ -1,41 +1,34 @@
+import React from 'react'
 import { FormControl, Box, Input, Button } from 'native-base'
+import * as Styles from './styles'
+import { ButtonGeneral, InputGeneral } from '@/Components'
 import { useNavigation } from '@react-navigation/native'
+import { View } from 'react-native'
 
 export function LoginForm() {
   const navigation = useNavigation()
   return (
-    <Box>
-      <FormControl mt={0}>
-        <FormControl.Label>E-mail</FormControl.Label>
-        <Input
+    <Styles.LoginContainer>
+        <InputGeneral
           placeholder="Login with your e-mail account"
-          size="lg"
-          w="100%"
-          borderRadius="lg"
-          backgroundColor="gray.100"
+          label='E-mail'
+          width="100%"
+          height="595px"
         />
-      </FormControl>
-      <FormControl mt={3}>
-        <FormControl.Label>Password</FormControl.Label>
-        <Input
+        <InputGeneral
           placeholder="Password"
-          size="lg"
-          w="100%"
-          borderRadius="lg"
-          backgroundColor="gray.100"
+          label="Password"
           // shadow={3}
         />
-      </FormControl>
-      <Button
-        w="100%"
-        bg="blue.800"
-        marginTop={5}
-        borderRadius="lg"
-        // @ts-ignore
-        onPress={() => navigation.navigate('modules', { screen: 'Principal' })}
-      >
-        log in
-      </Button>
-    </Box>
+        <View style={{backgroundColor: 'teal', width:'100%'}}>
+          <ButtonGeneral
+            title="Login"
+            color='#f58b6b'
+            // @ts-ignore
+            onPress={() => navigation.navigate('modules', { screen: 'Principal' })}
+          />
+        </View>
+    </Styles.LoginContainer>
   )
 }
+

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Image, Box, ScrollView, Checkbox } from 'native-base'
 import Logo from '../src/assets/Flockdlogo.png'
 import { useState } from 'react'

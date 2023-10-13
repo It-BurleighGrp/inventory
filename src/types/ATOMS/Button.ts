@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { ReactNode } from 'react'
-import { ITextProps } from 'native-base'
+import {GestureResponderEvent} from 'react-native'
 
-export interface TButton extends ITextProps {
-  children: ReactNode
-  onPress: any
+export type TButton = {
+  onPress: (event: GestureResponderEvent) => void
+  title: string
+  color: string
 }

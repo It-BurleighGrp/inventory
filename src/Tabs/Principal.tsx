@@ -1,21 +1,17 @@
-import { Text, Image, ScrollView, Button } from 'native-base'
+import React from 'react'
+import { Text, Image, ScrollView } from 'native-base'
+import { ButtonGeneral, MasterContainer } from '@/Components'
 import { useState, useEffect } from 'react'
 import { StyleSheet, Modal, Pressable, View } from 'react-native'
 import Logo from '../assets/Flockdlogo.png'
 import { TList } from '../types'
 import { useNavigation } from '@react-navigation/native'
 
-// import { useFonts } from 'expo-font'
-// import Modalpage from '../Modal/ItensProperty'
 
 export default function Principal() {
   const navigation = useNavigation()
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [itemSelect, setItemSelect] = useState({} as TList)
-
-  // const [fontsLoaded] = useFonts({
-  //   Nunito: require('../assets/Fonts/Nunito-VariableFont_wght.ttf'),
-  // })
   const [inventory, setInventory] = useState<TList[]>([])
 
   useEffect(() => {
@@ -29,18 +25,15 @@ export default function Principal() {
   }, [])
 
   return (
-    <ScrollView flex={1} p={5} marginBottom="5">
+    <MasterContainer>
+       <ScrollView flex={1} p={5} marginBottom="5">
       <Image source={Logo} alt="Logo Flockd" />
-      <Button
-        w="100%"
-        bg="blue.800"
-        marginTop={5}
-        borderRadius="lg"
+      <ButtonGeneral
+      color='black'
+        title='back'
         // @ts-ignore
-        onPress={() => navigation.navigate('Routes')}
-      >
-        voltar
-      </Button>
+        onPress={() => navigation.navigate('home')}
+      />
       {!isModalVisible ? (
         <>
           <Text
@@ -110,36 +103,23 @@ export default function Principal() {
         </View>
       )}
     </ScrollView>
+    </MasterContainer>
   )
 }
-
-// <Tab.Navigator tabs={props => <Tabs {...props} />}>
-//     {...}
-// </Tab.Navigator>
 
 const stylesModal = StyleSheet.create({
   centeredView: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    //   height: 50,
-    //   backgroundColor: 'teal',
-    //   marginTop: 22,
   },
   modalView: {
-    //   margin: 20,
     width: '90%',
     height: '70%',
     backgroundColor: 'white',
     borderRadius: 20,
     padding: 30,
     alignItems: 'center',
-    //   shadowColor: '#000',
-    //   shadowOffset: {
-    //     width: 0,
-    //     height: 2,
-    //   },
-    //   shadowOpacity: 0.25,
     shadowRadius: 2,
     elevation: 2,
   },
