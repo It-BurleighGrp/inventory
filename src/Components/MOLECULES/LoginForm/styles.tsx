@@ -3,9 +3,8 @@ import styled from 'styled-components/native'
 
 
 export const LoginContainer = styled.View`
-  align-items: center;
-  justify-content: center;
-  background-color: orange;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 100%;
   height: auto;
   gap: 16px;
