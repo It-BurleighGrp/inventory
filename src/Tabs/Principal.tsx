@@ -7,7 +7,6 @@ import Logo from '../assets/Flockdlogo.png'
 import { TList } from '../types'
 import { useNavigation } from '@react-navigation/native'
 
-
 export default function Principal() {
   const navigation = useNavigation()
   const [isModalVisible, setIsModalVisible] = useState(false)
@@ -20,89 +19,89 @@ export default function Principal() {
       .then((response) => response.json())
       .then((data) => setInventory(data))
       .catch((error) => {
-        console.warn('TESTANDO....', error)
+        // console.warn('TESTANDO....', error)
       })
   }, [])
 
   return (
     <MasterContainer>
-       <ScrollView flex={1} p={5} marginBottom="5">
-      <Image source={Logo} alt="Logo Flockd" />
-      <ButtonGeneral
-      color='black'
-        title='back'
-        // @ts-ignore
-        onPress={() => navigation.navigate('home')}
-      />
-      {!isModalVisible ? (
-        <>
-          <Text
-            fontFamily="Nunito"
-            marginBottom="5"
-            textAlign="center"
-            fontSize="30"
-            fontWeight="bold"
-            color="blue.800"
-          >
-            LIST
-          </Text>
-          {inventory?.map((item) => {
-            return (
-              <View key={item.id}>
-                <Text
-                  fontFamily="Nunito"
-                  fontWeight="bold"
-                  color="gray.600"
-                  fontSize="16"
-                  margin="5"
-                  onPress={() => {
-                    setItemSelect(item)
-                    setIsModalVisible(true)
-                  }}
-                  key={item.id}
-                >
-                  {item.name} - {item.model}
-                </Text>
+      <ScrollView flex={1} p={5} marginBottom="5">
+        <Image source={Logo} alt="Logo Flockd" />
+        <ButtonGeneral
+          color="black"
+          title="back"
+          // @ts-ignore
+          onPress={() => navigation.navigate('home')}
+        />
+        {!isModalVisible ? (
+          <>
+            <Text
+              fontFamily="Nunito"
+              marginBottom="5"
+              textAlign="center"
+              fontSize="30"
+              fontWeight="bold"
+              color="blue.800"
+            >
+              LIST
+            </Text>
+            {inventory?.map((item) => {
+              return (
+                <View key={item.id}>
+                  <Text
+                    fontFamily="Nunito"
+                    fontWeight="bold"
+                    color="gray.600"
+                    fontSize="16"
+                    margin="5"
+                    onPress={() => {
+                      setItemSelect(item)
+                      setIsModalVisible(true)
+                    }}
+                    key={item.id}
+                  >
+                    {item.name} - {item.model}
+                  </Text>
+                </View>
+              )
+            })}
+          </>
+        ) : (
+          <View style={stylesModal.centeredView}>
+            <Modal animationType="fade" transparent visible={isModalVisible}>
+              <View style={stylesModal.centeredView}>
+                <View style={stylesModal.modalView}>
+                  <Text style={stylesModal.modalText}>
+                    Model: {itemSelect.model} {'\n'}
+                    Name: {itemSelect.name}
+                    {'\n'}
+                    Localization: {itemSelect.localization}
+                    {'\n'}
+                    Other information: {itemSelect.others}
+                    {'\n'}
+                    Price: {itemSelect.price}
+                    {'\n'}
+                    Responsible: {itemSelect.responsible}
+                    {'\n'}
+                    Serial: {itemSelect.serial}
+                    {'\n'}
+                    Status: {itemSelect.status}
+                    {'\n'}
+                    Type: {itemSelect.type}
+                    {'\n'}
+                  </Text>
+                  <Pressable
+                    style={[stylesModal.button, stylesModal.buttonClose]}
+                    onPress={() => setIsModalVisible(!isModalVisible)}
+                  >
+                    <Text style={stylesModal.textStyle}>back</Text>
+                  </Pressable>
+                </View>
               </View>
-            )
-          })}
-        </>
-      ) : (
-        <View style={stylesModal.centeredView}>
-          <Modal animationType="fade" transparent visible={isModalVisible}>
-            <View style={stylesModal.centeredView}>
-              <View style={stylesModal.modalView}>
-                <Text style={stylesModal.modalText}>
-                  Model: {itemSelect.model} {'\n'}
-                  Name: {itemSelect.name}
-                  {'\n'}
-                  Localization: {itemSelect.localization}
-                  {'\n'}
-                  Other information: {itemSelect.others}
-                  {'\n'}
-                  Price: {itemSelect.price}
-                  {'\n'}
-                  Responsible: {itemSelect.responsible}
-                  {'\n'}
-                  Serial: {itemSelect.serial}
-                  {'\n'}
-                  Status: {itemSelect.status}
-                  {'\n'}
-                  Type: {itemSelect.type}
-                  {'\n'}
-                </Text>
-                <Pressable
-                  style={[stylesModal.button, stylesModal.buttonClose]}
-                  onPress={() => setIsModalVisible(!isModalVisible)}
-                >
-                  <Text style={stylesModal.textStyle}>back</Text>
-                </Pressable>
-              </View>
-            </View>
-          </Modal>
-        </View>
-      )}
-    </ScrollView>
+            </Modal>
+          </View>
+        )}
+      </ScrollView>
     </MasterContainer>
   )
 }
