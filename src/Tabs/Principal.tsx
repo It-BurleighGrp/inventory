@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react'
 import { Text, Image, ScrollView } from 'native-base'
 import { ButtonGeneral, MasterContainer } from '@/Components'
@@ -15,7 +16,7 @@ export default function Principal() {
 
   useEffect(() => {
     // fetch('https://d6b8-163-47-49-182.ngrok-free.app/items')
-    fetch('http://localhost:3334/items')
+    fetch('https://8584-163-47-49-182.ngrok-free.app/items')
       .then((response) => response.json())
       .then((data) => setInventory(data))
       .catch((error) => {
@@ -28,7 +29,7 @@ export default function Principal() {
       <ScrollView flex={1} p={5} marginBottom="5">
         <Image source={Logo} alt="Logo Flockd" />
         <ButtonGeneral
-          color="black"
+          color="#f58b6b"
           title="back"
           // @ts-ignore
           onPress={() => navigation.navigate('home')}
@@ -47,11 +48,19 @@ export default function Principal() {
             </Text>
             {inventory?.map((item) => {
               return (
-                <View key={item.id}>
+                <View
+                  key={item.id}
+                  style={{
+                    backgroundColor: 'rgba(245, 139, 107, 0.6)',
+                    marginBottom: 10,
+                    borderRadius: 5,
+                    alignItems: 'center',
+                  }}
+                >
                   <Text
                     fontFamily="Nunito"
                     fontWeight="bold"
-                    color="gray.600"
+                    color="white"
                     fontSize="16"
                     margin="5"
                     onPress={() => {
@@ -60,7 +69,7 @@ export default function Principal() {
                     }}
                     key={item.id}
                   >
-                    {item.name} - {item.model}
+                    {item.name} - {item.model} | {item.status}
                   </Text>
                 </View>
               )
@@ -140,5 +149,9 @@ const stylesModal = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: 'center',
+    alignContent: 'center',
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginTop: 5,
   },
 })
