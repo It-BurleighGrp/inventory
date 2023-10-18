@@ -1,6 +1,6 @@
-import { secoes } from '@/utils/CadastroEntradaTexto'
 import React from 'react'
+import {SignUpTemplate} from '@/Components'
 
 export default function LoginPage() {
-  return <secoes />
+  return <SignUpTemplate />
 }

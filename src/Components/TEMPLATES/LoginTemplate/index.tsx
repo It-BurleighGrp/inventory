@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, Text, Link } from 'native-base'
-import Logo from '../../../assets/Flockdlogo.png'
+import Logo from '@/assets/Flockdlogo.png'
 import { TouchableOpacity } from 'react-native'
 import * as Styles from './styles'
 import { LoginForm, MasterContainer } from '@/Components'
@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 
 export function LoginTemplate() {
   const navigation = useNavigation()
+
   return (
     <MasterContainer>
       <Styles.Wrapper>
@@ -18,7 +19,11 @@ export function LoginTemplate() {
         </Link>
         <Styles.LoginBox>
           <Text>Still do not have account?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
+          <TouchableOpacity onPress={() => 
+            // @ts-ignore
+            navigation.navigate('signup')
+          }
+          >
             <Text color="blue.500" fontWeight="bold">
               Create your account
             </Text>

@@ -1,7 +1,8 @@
 import styled from 'styled-components/native'
-import { ScrollView } from 'native-base'
+import { View } from 'native-base'
 
-export const Wrapper = styled(ScrollView)`
+export const Wrapper = styled(View)`
   flex: 1;
-  padding: 5px;
+  padding: 16px;
+  background-color: teal;
 `
