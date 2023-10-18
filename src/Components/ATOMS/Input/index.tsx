@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/require-default-props */
-import { FormControl, Input, Text, Icon, View } from 'native-base'
+import { Text, Icon } from 'native-base'
 import { TInput, TTextType } from '@/types'
 import * as Styles from './styles'
 import React, { useState } from 'react'
@@ -10,9 +10,8 @@ import { Platform } from 'react-native'
 export function InputGeneral({
   label,
   placeholder,
-  height,
-  width,
   type,
+  value,
   onChangeText,
 }: TInput) {
   const [showPassword, setShowPassword] = useState(TTextType.password)
@@ -41,13 +40,19 @@ export function InputGeneral({
               )
             }
           />
-          <Styles.GenericInput placeholder={placeholder} type={showPassword} />
+          <Styles.GenericInput
+            placeholder={placeholder}
+            type={showPassword}
+            onChangeText={onChangeText}
+            value={value}
+          />
         </Styles.InputIconContainer>
       ) : (
         <Styles.GenericInput
           placeholder={placeholder}
           type={type}
           onChangeText={onChangeText}
+          value={value}
         />
       )}
     </Styles.InputWrapper>

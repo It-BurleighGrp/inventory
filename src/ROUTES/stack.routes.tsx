@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
-import Login from '@/Login'
+import Login from '@/pages/login'
 import TabRoutes from './tab.routes'
 
 const Stack = createNativeStackNavigator()

@@ -5,12 +5,14 @@ import { Text, StyleSheet } from 'react-native'
 import { Button } from 'native-base'
 import { IStackScreenprops } from '@/Library/IStackScreenProps'
 import { IQRCodePayload } from '@/Library/IQRCodePayload'
+import { TList } from '@/types'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ScanScreen: React.FunctionComponent<IStackScreenprops> = (props) => {
   const [loading, setLoading] = useState(true)
   const [scanData, setScanData] = useState<IQRCodePayload>()
   const [permission, setPermission] = useState(true)
+  const [itemSelect, setItemSelect] = useState({} as TList)
 
   useEffect(() => {
     requestCameraPermission()
