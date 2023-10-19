@@ -13,6 +13,7 @@ import {
 import Logo from '../assets/Flockdlogo.png'
 import { TList } from '../types'
 import { useNavigation } from '@react-navigation/native'
+import QRCode from 'react-native-qrcode-svg'
 
 export default function Principal() {
   const navigation = useNavigation()
@@ -115,6 +116,7 @@ export default function Principal() {
                     Type: {itemSelect.type}
                     {'\n'}
                   </Text>
+                  <QRCode value={itemSelect.id.toString()} size={100} />
                   <Pressable
                     style={[stylesModal.button, stylesModal.buttonClose]}
                     onPress={() => setIsModalVisible(!isModalVisible)}

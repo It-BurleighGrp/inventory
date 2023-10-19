@@ -1,6 +1,6 @@
 const inventory = [
   {
-    id: 1,
+    pageid: 1,
     titulo: 'Page 1 of 3',
     entradaTexto: [
       {
@@ -21,37 +21,37 @@ const inventory = [
     ],
   },
   {
-    id: 2,
+    pageid: 2,
     titulo: 'Page 2 of 3',
     entradaTexto: [
       {
-        id: 1,
+        id: 4,
         label: 'Serial',
         placeholder: 'Insert the Serial of the object',
       },
       {
-        id: 2,
+        id: 5,
         label: 'Responsible',
         placeholder: 'Insert the responsible fot this object',
       },
       {
-        id: 3,
+        id: 6,
         label: 'Others',
         placeholder: 'Other',
       },
       {
-        id: 4,
+        id: 7,
         label: 'Status',
         placeholder: 'Insert the Status',
       },
     ],
   },
   {
-    id: 3,
+    pageid: 3,
     titulo: 'Page 3 of 3',
     entradaTexto: [
       {
-        id: 1,
+        id: 8,
         label: 'Price',
         placeholder: 'Insert the Value for this object',
       },

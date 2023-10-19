@@ -1,4 +1,4 @@
-import { Image, Box, ScrollView } from 'native-base'
+import { Image, ScrollView } from 'native-base'
 import React from 'react'
 import Logo from '../../../assets/Flockdlogo.png'
 import { useState } from 'react'
@@ -13,11 +13,36 @@ import { secoes } from '../../../utils/SignUpForm'
 import { useNavigation } from '@react-navigation/native'
 import * as Styles from './styles'
 import { Controller, useForm } from 'react-hook-form'
+// import { IStackScreenprops } from '@/Library/IStackScreenProps'
+// import { IQRCodePayload } from '@/Library/IQRCodePayload'
 
 export function InventoryForm() {
   const [numSecao, setNumSecao] = useState(0)
   const navigation = useNavigation()
   const { control } = useForm({})
+
+  //   // eslint-disable-next-line react/function-component-definition, react/no-unstable-nested-components
+  //   const QRCodeScreen: React.FunctionComponent<IStackScreenprops> = (props) => {
+  //     const { navigation } = props
+  //     const payload: IQRCodePayload = {
+  //       name: 'Cool Person',
+  //       number: '1-234-567-8900',
+  //     }
+
+  //     return (
+  //       <View>
+  //         <QRCode value={JSON.stringify(payload)} />
+  //         <View>
+  //           <ButtonGeneral
+  //             backgroundColor="blue.800"
+  //             onPress={() => navigation.navigate('Scan')}
+  //           >
+  //             Go to Scanner
+  //           </ButtonGeneral>
+  //         </View>
+  //       </View>
+  //     )
+  //   }
 
   function avancarSecao() {
     if (numSecao < inventory.length - 1) {
