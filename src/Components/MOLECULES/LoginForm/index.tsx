@@ -24,16 +24,6 @@ export function LoginForm() {
 
   const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-  function validadeEmail(email) {
-    // console.warn('ESTE >>>>', email)
-    if (reg.test(email)) {
-      // console.warn('TESTANDO O REGEX AQUI')
-      navigation.navigate('modules', { screen: 'Principal' })
-    } else {
-      console.warn('Invalid E-mail. Please insert a valid e-mail')
-    }
-  }
-
   return (
     <Styles.LoginContainer>
       <Controller
@@ -52,8 +42,6 @@ export function LoginForm() {
           <InputGeneral
             placeholder="Login with your e-mail account"
             label="E-mail"
-            width="100%"
-            height="595px"
             onChangeText={onChange}
             value={value}
           />
@@ -73,8 +61,6 @@ export function LoginForm() {
             placeholder="Password"
             label="Password"
             type={TTextType.password}
-            height=""
-            width="" // shadow={3}
             onChangeText={onChange}
             value={value}
           />
@@ -87,9 +73,9 @@ export function LoginForm() {
       <View style={{ width: '100%' }}>
         <ButtonGeneral
           title="Login"
-          color="#f58b6b"
-          onPress={handleSubmit((data) => {
-            console.warn(data)
+          backgroundColor="#f58b6b"
+          onPress={handleSubmit(() => {
+            navigation.navigate('modules', { screen: 'Principal' })
           })}
         >
           <Text style={{ color: 'white' }}>Login</Text>

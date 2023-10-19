@@ -8,7 +8,7 @@ import {
   InputGeneral,
   MasterContainer,
 } from '@/Components'
-import { secoes } from '@/utils/CadastroEntradaTexto'
+import { secoes } from '@/utils/SignUpForm'
 import { Controller, useForm } from 'react-hook-form'
 import * as Styles from './styles'
 import { useNavigation } from '@react-navigation/native'

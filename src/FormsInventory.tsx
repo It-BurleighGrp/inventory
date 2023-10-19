@@ -4,7 +4,7 @@ import Logo from './assets/Flockdlogo.png'
 import { useState } from 'react'
 import { ButtonGeneral, InputGeneral, Title } from '@/Components'
 import { inventory } from './utils/FormularioInventory'
-import { secoes } from '../src/utils/CadastroEntradaTexto'
+import { secoes } from '../src/utils/SignUpForm'
 
 export default function InventoryForm({ navigation }) {
   const [numSecao, setNumSecao] = useState(0)
@@ -38,11 +38,10 @@ export default function InventoryForm({ navigation }) {
       </Box>
 
       {numSecao > 0 && (
-        <ButtonGeneral onPress={() => voltarSecao()} title='Voltar' />
-
+        <ButtonGeneral onPress={() => voltarSecao()} title="Voltar" />
       )}
       {numSecao !== 2 && (
-        <ButtonGeneral onPress={() => avancarSecao()} title='Avançar' />
+        <ButtonGeneral onPress={() => avancarSecao()} title="Avançar" />
       )}
       {numSecao === secoes.length - 1 && (
         <ButtonGeneral
@@ -50,8 +49,8 @@ export default function InventoryForm({ navigation }) {
             setNumSecao(0)
             navigation.navigate('modules', { screen: 'Principal' })
           }}
-          title='Finish'
-       />
+          title="Finish"
+        />
       )}
     </ScrollView>
   )

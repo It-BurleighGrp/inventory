@@ -3,7 +3,13 @@ import React from 'react'
 import { Text, Image, ScrollView } from 'native-base'
 import { ButtonGeneral, MasterContainer } from '@/Components'
 import { useState, useEffect } from 'react'
-import { StyleSheet, Modal, Pressable, View } from 'react-native'
+import {
+  StyleSheet,
+  Modal,
+  Pressable,
+  View,
+  TouchableOpacity,
+} from 'react-native'
 import Logo from '../assets/Flockdlogo.png'
 import { TList } from '../types'
 import { useNavigation } from '@react-navigation/native'
@@ -28,12 +34,22 @@ export default function Principal() {
     <MasterContainer>
       <ScrollView flex={1} p={5} marginBottom="5">
         <Image source={Logo} alt="Logo Flockd" />
-        <ButtonGeneral
-          color="#f58b6b"
-          title="back"
-          // @ts-ignore
-          onPress={() => navigation.navigate('home')}
-        />
+        <TouchableOpacity
+          onPress={() =>
+            // @ts-ignore
+            navigation.navigate('home')
+          }
+        >
+          <Text
+            textAlign="right"
+            fontSize="lg"
+            marginBottom="24px"
+            fontWeight="bold"
+            color="#f58b6b"
+          >
+            X
+          </Text>
+        </TouchableOpacity>
         {!isModalVisible ? (
           <>
             <Text

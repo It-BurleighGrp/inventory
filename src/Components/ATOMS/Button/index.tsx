@@ -8,10 +8,11 @@ export function ButtonGeneral({
   children,
   width,
   height,
+  backgroundColor,
 }: TButton) {
   return (
     <Styles.Button
-      backgroundColor={color}
+      backgroundColor={backgroundColor}
       onPress={onPress}
       color={color}
       width={width}
