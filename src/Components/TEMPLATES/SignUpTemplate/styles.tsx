@@ -1,8 +1,15 @@
 import styled from 'styled-components/native'
-import { View } from 'native-base'
+import { View, Box } from 'native-base'
 
 export const Wrapper = styled(View)`
   flex: 1;
   padding: 16px;
-  background-color: teal;
+`
+
+export const BoxSignUp = styled(Box)`
+  height: 60%;
+  flex: 1;
+  padding: 5px;
+  gap: 16px;
+  margin-bottom: 8px;
 `

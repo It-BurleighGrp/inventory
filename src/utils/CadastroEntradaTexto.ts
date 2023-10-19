@@ -1,7 +1,7 @@
 const secoes = [
   {
     id: 1,
-    titulo: 'Insira alguns dados básicos',
+    titulo: 'Input some data from you',
     entradaTexto: [
       {
         id: 1,
@@ -32,74 +32,31 @@ const secoes = [
   },
   {
     id: 2,
-    titulo: 'Agora, mais alguns dados sobre você:',
+    titulo: 'Now, more data about you:',
     entradaTexto: [
       {
         id: 1,
-        label: 'CEP',
-        placeholder: 'Insira seu CEP',
+        label: 'Birthday Date',
+        placeholder: 'Insert your birthday date',
       },
       {
         id: 2,
-        label: 'Endereço',
-        placeholder: 'Insira seu endereço',
+        label: 'Phone',
+        placeholder: '(00) 00000-0000',
       },
       {
         id: 3,
-        label: 'Número',
-        placeholder: 'Insira seu número',
+        label: 'Role',
+        placeholder: 'Insert your role',
       },
       {
         id: 4,
-        label: 'Complemento',
+        label: 'Photo',
+        type: 'image',
         placeholder: 'Insira seu complemento',
-      },
-      {
-        id: 5,
-        label: 'Telefone',
-        placeholder: '(00) 00000-0000',
       },
     ],
     checkbox: [],
-  },
-  {
-    id: 3,
-    titulo: 'Para finalizar, quais são os seus planos?',
-    entradaTexto: [],
-    checkbox: [
-      {
-        id: 1,
-        value: 'Sulamerica',
-      },
-      {
-        id: 2,
-        value: 'Unimed',
-      },
-      {
-        id: 3,
-        value: 'Bradesco',
-      },
-      {
-        id: 4,
-        value: 'Amil',
-      },
-      {
-        id: 5,
-        value: 'Biosaúde',
-      },
-      {
-        id: 6,
-        value: 'Biovida',
-      },
-      {
-        id: 7,
-        value: 'Outros',
-      },
-      {
-        id: 8,
-        value: 'Não tenho plano',
-      },
-    ],
   },
 ]
 

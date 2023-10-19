@@ -4,7 +4,12 @@ import { TButton } from '@/types'
 
 export function ButtonGeneral({ onPress, color, children }: TButton) {
   return (
-    <Styles.Button backgroundColor={color} onPress={onPress} color={color}>
+    <Styles.Button
+      backgroundColor={color}
+      onPress={onPress}
+      color={color}
+      marginBottom="5"
+    >
       {children}
     </Styles.Button>
   )
