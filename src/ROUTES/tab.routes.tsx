@@ -1,5 +1,6 @@
 import React from 'react'
-import InventoryForm from '@/FormsInventory'
+import InventoryForm from '@/pages/newItemInventory'
+// import InventoryForm from '@/Tabs/FormsInventory'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Principal from '@/Tabs/Principal'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'

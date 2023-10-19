@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react'
 import { Text, Image, ScrollView } from 'native-base'
-import { ButtonGeneral, MasterContainer } from '@/Components'
+import { MasterContainer } from '@/Components'
 import { useState, useEffect } from 'react'
 import {
   StyleSheet,
@@ -25,7 +25,7 @@ export default function Principal() {
     fetch('https://8584-163-47-49-182.ngrok-free.app/items')
       .then((response) => response.json())
       .then((data) => setInventory(data))
-      .catch((error) => {
+      .catch(() => {
         // console.warn('TESTANDO....', error)
       })
   }, [])
