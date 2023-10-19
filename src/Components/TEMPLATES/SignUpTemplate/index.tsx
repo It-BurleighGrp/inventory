@@ -14,8 +14,6 @@ import * as Styles from './styles'
 import { useNavigation } from '@react-navigation/native'
 import { Image, View } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
-import RNFS from 'react-native-fs'
-import RNFetchBlob from 'rn-fetch-blob'
 
 export function SignUpTemplate() {
   const { control } = useForm({})
@@ -79,7 +77,8 @@ export function SignUpTemplate() {
                         <ButtonGeneral
                           title="Pick an image from camera roll"
                           onPress={pickImage}
-                          color="#ED5C2F"
+                          backgroundColor="#ED5C2F"
+                          width=""
                         >
                           Upload your photo
                         </ButtonGeneral>
@@ -124,27 +123,35 @@ export function SignUpTemplate() {
             )
           })}
         </Box>
-        {numSecao > 0 && (
-          <ButtonGeneral onPress={() => voltarSecao()} color="#f58b6b">
-            Back
-          </ButtonGeneral>
-        )}
-        {numSecao !== 1 && (
-          <ButtonGeneral onPress={() => avancarSecao()} color="#f58b6b">
-            Next
-          </ButtonGeneral>
-        )}
-        {numSecao === secoes.length - 1 && (
-          <ButtonGeneral
-            onPress={() =>
-              // @ts-ignore
-              navigation.navigate('modules', { screen: 'Principal' })
-            }
-            color="#f58b6b"
-          >
-            Submit
-          </ButtonGeneral>
-        )}
+        <Styles.WrapperSignUpButtons>
+          {numSecao > 0 && (
+            <ButtonGeneral
+              onPress={() => voltarSecao()}
+              backgroundColor="#f58b6b"
+            >
+              Back
+            </ButtonGeneral>
+          )}
+          {numSecao !== 1 && (
+            <ButtonGeneral
+              onPress={() => avancarSecao()}
+              backgroundColor="#f58b6b"
+            >
+              Next
+            </ButtonGeneral>
+          )}
+          {numSecao === secoes.length - 1 && (
+            <ButtonGeneral
+              onPress={() =>
+                // @ts-ignore
+                navigation.navigate('home')
+              }
+              backgroundColor="#f58b6b"
+            >
+              Submit
+            </ButtonGeneral>
+          )}
+        </Styles.WrapperSignUpButtons>
       </Styles.Wrapper>
     </MasterContainer>
   )

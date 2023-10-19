@@ -13,3 +13,7 @@ export const BoxSignUp = styled(Box)`
   gap: 16px;
   margin-bottom: 8px;
 `
+
+export const WrapperSignUpButtons = styled(View)`
+  gap: 8px;
+`

@@ -4,6 +4,9 @@ import { GestureResponderEvent } from 'react-native'
 export type TButton = {
   onPress: (event: GestureResponderEvent) => void
   title?: string
-  color: string
+  color?: string
   children: ReactNode
+  width?: string
+  height?: string
+  backgroundColor: string
 }

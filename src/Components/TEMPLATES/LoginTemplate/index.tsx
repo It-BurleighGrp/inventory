@@ -18,11 +18,12 @@ export function LoginTemplate() {
           Forgot your Password?
         </Link>
         <Styles.LoginBox>
-          <Text>Still do not have account?</Text>
-          <TouchableOpacity onPress={() => 
-            // @ts-ignore
-            navigation.navigate('signup')
-          }
+          <Text marginRight="2">Still do not have account?</Text>
+          <TouchableOpacity
+            onPress={() =>
+              // @ts-ignore
+              navigation.navigate('signup')
+            }
           >
             <Text color="blue.500" fontWeight="bold">
               Create your account

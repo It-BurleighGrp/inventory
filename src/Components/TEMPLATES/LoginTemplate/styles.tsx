@@ -5,11 +5,12 @@ export const Wrapper = styled(VStack)`
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 16px;
 `
 
 export const LoginBox = styled(Box)`
   width: 100%;
   flex-direction: row;
   justify-content: center;
+  padding: 8px;
 `
