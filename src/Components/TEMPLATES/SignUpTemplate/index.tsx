@@ -14,6 +14,8 @@ import * as Styles from './styles'
 import { useNavigation } from '@react-navigation/native'
 import { Image, View } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
+import RNFS from 'react-native-fs'
+import RNFetchBlob from 'rn-fetch-blob'
 
 export function SignUpTemplate() {
   const { control } = useForm({})
@@ -36,13 +38,16 @@ export function SignUpTemplate() {
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
     const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
+      base64: true,
     })
 
     console.log(result)
+    const base64Image = result.assets[0].base64
+    console.log('ESTE E A URI DA IMAGEM', base64Image)
 
     if (!result.canceled) {
       setImage(result.assets[0].uri)
@@ -74,7 +79,7 @@ export function SignUpTemplate() {
                         <ButtonGeneral
                           title="Pick an image from camera roll"
                           onPress={pickImage}
-                          color="#f58b6b"
+                          color="#ED5C2F"
                         >
                           Upload your photo
                         </ButtonGeneral>
@@ -137,7 +142,7 @@ export function SignUpTemplate() {
             }
             color="#f58b6b"
           >
-            End
+            Submit
           </ButtonGeneral>
         )}
       </Styles.Wrapper>
